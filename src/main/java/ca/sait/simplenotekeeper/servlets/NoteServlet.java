@@ -23,6 +23,15 @@ public class NoteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String query = request.getQueryString();
+        
+        if (query != null && query.contains("edit")){
+            //Displays Edit form
+            
+            
+             getServletContext().getRequestDispatcher("/WEB-INF/editnote.jsp").forward(request, response);
+        } else {
+            //Displays the note
         String path = getServletContext().getRealPath("/WEB-INF/note.txt");
         
         BufferedReader br = new BufferedReader(new FileReader(new File(path)));
@@ -36,6 +45,7 @@ public class NoteServlet extends HttpServlet {
         
         
         getServletContext().getRequestDispatcher("/WEB-INF/viewnote.jsp").forward(request, response);
+        }
     }
 
     /**
@@ -48,8 +58,21 @@ public class NoteServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException {      
+        String title = request.getParameter("title");
+        String contents = request.getParameter("contents");
         
+        
+        String path = getServletContext().getRealPath("/WEB-INF/note.txt");
+        
+        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, false))); 
+        
+        pw.println(title);
+        pw.println(contents);
+        
+        pw.close();
+        
+        response.sendRedirect("note");
     }
 
 }

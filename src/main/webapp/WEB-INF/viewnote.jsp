@@ -14,6 +14,6 @@
         <p><b>Contents:</b></p> 
         <p><c:out value="${note.contents}"/></p>
         
-        <a href= "">Edit</a>
+        <a href= "note?edit">Edit</a>
     </body>
 </html>
