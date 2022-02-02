@@ -6,12 +6,15 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Edit Note</h1>
+        <h1>Simple Note Keeper</h1>
+        <h2> Edit Note</h2>
         
         <form action= "note" method="post">
-            <input type="text" name ="title" id="title" placeholder="Title">
-             <input type="text" name ="contents" id="contents" placeholder="Contents">
-             <button type="submit">Submit</button>
+            <label for="title">Title:</label>
+            <input type="text" name ="title" id="title" value="This is the title"><br>
+            <label for="contents">Contents:</label> 
+            <textarea name ="contents" id="contents" rows = "6" cols="25">Contents go here</textarea><br>
+            <button type="submit">Save</button>
         </form>
     </body>
 </html>
