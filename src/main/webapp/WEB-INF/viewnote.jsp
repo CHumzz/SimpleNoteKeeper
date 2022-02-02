@@ -1,9 +1,4 @@
-<%-- 
-    Document   : viewnote
-    Created on : 1-Feb-2022, 5:11:18 PM
-    Author     : Cole
---%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,9 +9,10 @@
     <body>
         <h1>Simple Note Keeper</h1>  
         <h2>View Note</h2>
-        <p><b>Title:</b> This is the title</p>
+        
+        <p><b>Title:</b> <c:out value="${note.title}"/></p>
         <p><b>Contents:</b></p> 
-        <p>Contents go here</p>
+        <p><c:out value="${note.contents}"/></p>
         
         <a href= "">Edit</a>
     </body>

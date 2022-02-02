@@ -1,9 +1,3 @@
-<%-- 
-    Document   : editnote
-    Created on : 1-Feb-2022, 5:11:39 PM
-    Author     : Cole
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
